@@ -64,8 +64,8 @@ import D3Container from 'd3-react-container'
 
 ## Contributing
 
-We welcome your contribution! Fork the repo, make some changes, submit a pull-request! Our [contributing](contributing.md) doc has some details.
+We welcome your contribution! Fork the repo, make some changes, submit a pull-request!.
 
 ## License
 
-MIT
+none
