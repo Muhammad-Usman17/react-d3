@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# d3-react-container
 
-## Available Scripts
+[![npm download][download-image]][download-url]
 
-In the project directory, you can run:
+[download-image]: https://img.shields.io/npm/dm/react-tooltip.svg?style=flat-square
+[download-url]: https://npmjs.org/package/d3-react-container
 
-### `yarn start`
+## Maintainer
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Muhammad Usman](https://github.com/Muhammad-Usman17)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Installation
 
-### `yarn test`
+```sh
+npm install d3-react-container
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `yarn build`
+**Using NPM**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1 . Require d3-react-container after installation
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```js
+import D3Container from 'd3-react-container'
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2 . Add parent element = "html element" to D3Container component
 
-### `yarn eject`
+```jsx
+<D3Container element="div" />
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3 . Include d3 implementation in D3Callback props
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+<D3Container element="div"
+        element="div"
+        d3Callback={selection => {
+          //d3 code
+        }/>
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Options
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+| props      | Type     | Description       | Default Value    |
+| :--------- | :------- | :---------------- | :--------------- |
+| element    | String   | HTML element      | 'div'            |
+| D3Callback | Function | D3 Implementation | (selection)=> {} |
 
-## Learn More
+> Show specific tooltip manually, for example:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```js
+import D3Container from 'd3-react-container'
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  <D3Container
+        element="div"
+        d3Callback={selection => {
+          const div = selection.attr('class', 'App')
+          .style('width', '500px')
+          .style('height', '500px')
+          const header = div.append('header').attr('class', 'App-header')}/>
+```
 
-### Code Splitting
+## Contributing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+We welcome your contribution! Fork the repo, make some changes, submit a pull-request! Our [contributing](contributing.md) doc has some details.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+MIT
